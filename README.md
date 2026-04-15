@@ -194,30 +194,10 @@ Potential next steps for the project include:
 * GPS waypoint navigation
 * Thermal-camera integration
 * Autonomous obstacle avoidance
-* Wireless telemetry and live video streaming
 * Integration with mapping software
-* Machine-learning-based victim detection
 
 ---
 
-## Screenshots / Media
-
-Add the following to improve the GitHub presentation:
-
-```text
-/docs/images/drone_photo.jpg
-/docs/images/wiring_diagram.png
-/docs/images/facial_detection_demo.gif
-```
-
-Then reference them in the README:
-
-```markdown
-![Drone Prototype](docs/images/drone_photo.jpg)
-![Wiring Diagram](docs/images/wiring_diagram.png)
-```
-
----
 
 ## License
 
@@ -237,19 +217,3 @@ Electrical and Computer Engineering Student
 Interested in embedded systems, robotics, autonomous vehicles, and search-and-rescue technology.
 
 ---
-
-## GitHub README Tips
-
-To make the repository even more professional, consider adding:
-
-* A banner image at the top of the README
-* A short project demo GIF
-* Build/status badges
-* CAD renders or photos of the finished drone
-* A hardware bill of materials (BOM)
-* A `docs/` folder containing:
-
-  * Design notes
-  * Wiring diagrams
-  * Images
-  * Test results
