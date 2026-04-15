@@ -1,0 +1,43 @@
+.program dshot
+.side_set 1 opt
+
+; Read bit from FIFO
+pull block      side 0
+out x, 1        side 0
+set y, 0        side 0 ; Just an example initialization
+
+; Branch based on bit in x
+jmp !x, do_zero_bit_high  side 0
+jmp do_one_bit_high       side 0
+
+do_zero_bit_high:
+    ; Set pin high
+    set pindirs, 1 side 1
+    set y, 155 side 0
+zero_high_loop:
+    nop side 0 [0]
+    jmp y-- zero_high_loop side 0
+    ; Now go low
+    set pindirs, 1 side 0
+    set y, 259 side 0
+zero_low_loop:
+    nop side 0 [0]
+    jmp y-- zero_low_loop side 0
+    jmp done_bit side 0
+
+do_one_bit_high:
+    ; Set pin high
+    set pindirs, 1 side 1
+    set y, 311 side 0
+one_high_loop:
+    nop side 0 [0]
+    jmp y-- one_high_loop side 0
+    ; Now go low
+    set pindirs, 1 side 0
+    set y, 103 side 0
+one_low_loop:
+    nop side 0 [0]
+    jmp y-- one_low_loop side 0
+
+done_bit:
+; Done with the bit, will loop back to pull next bit
